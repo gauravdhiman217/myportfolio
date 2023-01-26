@@ -40,10 +40,10 @@
       </header><!-- End Header -->
     
       <!-- ======= Hero Section ======= -->
-      <section id="hero" class="d-flex flex-column justify-content-center">
+      <section id="hero" class="d-flex flex-column justify-content-center" style="background-image: url('{%static '/img/hero-bg.jpeg'%}');">
         <div class="container" data-aos="zoom-in" data-aos-delay="100">
           <h1>Gaurav Dhiman</h1>
-          <p>I'm <span class="typed" data-typed-items="Python Programmer, SQL Developer, Data Analyst,Learner !"></span></p>
+          <p>I'm <span class="typed" data-typed-items="Python Programmer, SQL Developer, Data Analyst,Data Engineer,Learner !"></span></p>
           <div class="social-links">
             <a href="https://github.com/gauravdhiman217/" target="_blank" class="google-plus"><i class="bx bxl-github"></i></a>
             <a href="https://www.linkedin.com/in/imgauravdhiman/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
@@ -70,7 +70,7 @@
     
             <div class="row">
               <div class="col-lg-4">
-                <img src="{% static '/img/profile-img.jpg'%}" class="img-fluid" alt="">
+                <img src="{% static '/img/profile-img.jpg' %}" class="img-fluid" alt="">
               </div>
               <div class="col-lg-8 pt-4 pt-lg-0 content">
                 <h3 style="padding-top: 5px;">Personal Info.</h3>
@@ -304,141 +304,30 @@
               <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
                 <ul id="portfolio-flters">
                   <li data-filter="*" class="filter-active">All</li>
-                  <li data-filter=".filter-app">App</li>
-                  <li data-filter=".filter-card">Card</li>
-                  <li data-filter=".filter-web">Web</li>
+                  <li data-filter=".filter-PYTHON">Python</li>
+                  <li data-filter=".filter-SQL">SQL</li>
+                  <li data-filter=".filter-DATA VISUALIZATION">Data Visualization</li>
                 </ul>
               </div>
             </div>
     
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-    
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              {%for form in forms%}
+              <div class="col-lg-4 col-md-6 portfolio-item filter-{{form.Project_Type}}">
                 <div class="portfolio-wrap">
-                  <img src="{% static '/img/portfolio/portfolio-1.jpg'%}" class="img-fluid" alt="">
+                  <img src="{{form.Project_img.url}}" class="img-fluid" alt="">
                   <div class="portfolio-info">
-                    <h4>App 1</h4>
-                    <p>App</p>
+                    <h4>{{form.Project_Title}}</h4>
+                    <p>{{form.Project_Desc}}</p>
                     <div class="portfolio-links">
-                      <a href="{% static '/img/portfolio/portfolio-1.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                      <a href="{{form.Project_img.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{form.Project_Desc}}"><i class="bx bx-plus"></i></a>
+                      <a href="https://{{form.Project_Link}}"  target="_blank" ><i class="bx bx-link"></i></a>
                     </div>
                   </div>
                 </div>
               </div>
-    
-              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                <div class="portfolio-wrap">
-                  <img src="{% static '/img/portfolio/portfolio-2.jpg'%}" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Web 3</h4>
-                    <p>Web</p>
-                    <div class="portfolio-links">
-                      <a href="{% static '/img/portfolio/portfolio-2.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-wrap">
-                  <img src="{% static '/img/portfolio/portfolio-3.jpg'%}" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>App 2</h4>
-                    <p>App</p>
-                    <div class="portfolio-links">
-                      <a href="{% static '/img/portfolio/portfolio-3.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <div class="portfolio-wrap">
-                  <img src="{% static '/img/portfolio/portfolio-4.jpg'%}" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Card 2</h4>
-                    <p>Card</p>
-                    <div class="portfolio-links">
-                      <a href="{% static '/img/portfolio/portfolio-4.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                <div class="portfolio-wrap">
-                  <img src="{% static '/img/portfolio/portfolio-5.jpg'%}" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Web 2</h4>
-                    <p>Web</p>
-                    <div class="portfolio-links">
-                      <a href="{% static '/img/portfolio/portfolio-5.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-wrap">
-                  <img src="{% static '/img/portfolio/portfolio-6.jpg'%}" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>App 3</h4>
-                    <p>App</p>
-                    <div class="portfolio-links">
-                      <a href="{% static '/img/portfolio/portfolio-6.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <div class="portfolio-wrap">
-                  <img src="{% static '/img/portfolio/portfolio-7.jpg'%}" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Card 1</h4>
-                    <p>Card</p>
-                    <div class="portfolio-links">
-                      <a href="{% static '/img/portfolio/portfolio-7.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <div class="portfolio-wrap">
-                  <img src="{% static '/img/portfolio/portfolio-8.jpg'%}" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Card 3</h4>
-                    <p>Card</p>
-                    <div class="portfolio-links">
-                      <a href="{% static '/img/portfolio/portfolio-8.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                <div class="portfolio-wrap">
-                  <img src="{% static '/img/portfolio/portfolio-9.jpg'%}" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Web 3</h4>
-                    <p>Web</p>
-                    <div class="portfolio-links">
-                      <a href="{% static '/img/portfolio/portfolio-9.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
+              {%endfor%}
+                  
             </div>
     
           </div>
@@ -450,7 +339,7 @@
     
             <div class="section-title">
               <h2>Services</h2>
-              <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+              <p>I have worked with different tools and technologies throughout my career and developed a very deep understanding of the below tools and technologies. </p>
             </div>
     
             <div class="row">
@@ -463,8 +352,8 @@
                     </svg>
                     <i class="bx bxl-dribbble"></i>
                   </div>
-                  <h4><a href="">Lorem Ipsum</a></h4>
-                  <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                  <h4><a href="">Python</a></h4>
+                  <p>Expert in Django Framework, scrappy framework and automation</p>
                 </div>
               </div>
     
@@ -476,8 +365,8 @@
                     </svg>
                     <i class="bx bx-file"></i>
                   </div>
-                  <h4><a href="">Sed Perspiciatis</a></h4>
-                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                  <h4><a href="">Data Cleaning</a></h4>
+                  <p>Transforming un-structered data into meaningful structered Data</p>
                 </div>
               </div>
     
@@ -489,8 +378,8 @@
                     </svg>
                     <i class="bx bx-tachometer"></i>
                   </div>
-                  <h4><a href="">Magni Dolores</a></h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                  <h4><a href="">Data Visualization</a></h4>
+                  <p>Expert in Designing Data Visualization dashboard using tableau, PowerBi, Python</p>
                 </div>
               </div>
     
@@ -502,8 +391,8 @@
                     </svg>
                     <i class="bx bx-layer"></i>
                   </div>
-                  <h4><a href="">Nemo Enim</a></h4>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                  <h4><a href="">Web Crawling</a></h4>
+                  <p>Expert in Creating bots to scrap data from targeted website and automation on proesses</p>
                 </div>
               </div>
     
@@ -515,8 +404,8 @@
                     </svg>
                     <i class="bx bx-slideshow"></i>
                   </div>
-                  <h4><a href="">Dele Cardo</a></h4>
-                  <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+                  <h4><a href="">SpreedSheets</a></h4>
+                  <p>Expert in cleaning and preforming automation on SpreedSheets and excel sheets</p>
                 </div>
               </div>
     
@@ -528,8 +417,8 @@
                     </svg>
                     <i class="bx bx-arch"></i>
                   </div>
-                  <h4><a href="">Divera Don</a></h4>
-                  <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+                  <h4><a href="">DataBase Development</a></h4>
+                  <p>Expert in writing complex queries in sql and can help you to retrive write information.</p>
                 </div>
               </div>
     
@@ -555,19 +444,19 @@
                   <div class="address">
                     <i class="bi bi-geo-alt"></i>
                     <h4>Location:</h4>
-                    <p>A108 Adam Street, New York, NY 535022</p>
+                    <p>Sector 13, Chandigarh, India</p>
                   </div>
     
                   <div class="email">
                     <i class="bi bi-envelope"></i>
                     <h4>Email:</h4>
-                    <p>info@example.com</p>
+                    <p>imgauravdhiman@gmail.com</p>
                   </div>
     
                   <div class="phone">
                     <i class="bi bi-phone"></i>
                     <h4>Call:</h4>
-                    <p>+1 5589 55488 55s</p>
+                    <p>+91 79865-01437</p>
                   </div>
     
                 </div>
@@ -576,8 +465,9 @@
     
               <div class="col-lg-8 mt-5 mt-lg-0">
     
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <form action="{% url 'contact'%}" method="post" role="form" class="php-email-form">
                   <div class="row">
+                    {% csrf_token %}
                     <div class="col-md-6 form-group">
                       <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                     </div>
