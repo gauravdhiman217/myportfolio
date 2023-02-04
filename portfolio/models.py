@@ -5,7 +5,7 @@ from django.db import models
 CHOICE = (
     ("SQL","SQL"),
     ("PYTHON","PYTHON"),
-    ("DATA VISUALIZATION","DATA VISUALIZATION")
+    ("DATA_VISUALIZATION","DATA_VISUALIZATION")
 
 )
 # Create your models here.
