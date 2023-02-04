@@ -14,7 +14,9 @@ class Projects(models.Model):
     Project_Type = models.CharField(max_length=50,choices=CHOICE)
     Project_Desc = models.TextField(default="")
     Project_img = models.ImageField(upload_to='upload_img')
-    Project_Link = models.CharField(max_length=200,default="")
+    Project_Live_Link = models.CharField(max_length=200,default="")
+    Project_github_Link = models.CharField(max_length=200,default="")
+
 
     def __str__(self):
         return self.Project_Title
@@ -27,5 +29,5 @@ class Contact(models.Model):
     Message = models.TextField()
     
     def __str__(self):
-        return self.subject + self.Name
+        return self.Subject + " " + "Message From "+ self.Name
     

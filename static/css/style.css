@@ -10,7 +10,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #272829;
+  /* color: #272829; */
 }
 
 a {
@@ -277,6 +277,20 @@ h6 {
   color: #fff;
   background-color: #0563bb;
 }
+/*-------------------------------
+contact us section using django forms
+-----------------------------*/
+input[type=text], input[type=email], textarea {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical;
+ }
+
 
 /*--------------------------------------------------------------
 # Hero Section
