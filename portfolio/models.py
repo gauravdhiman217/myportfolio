@@ -30,4 +30,13 @@ class Contact(models.Model):
     
     def __str__(self):
         return self.Subject + " " + "Message From "+ self.Name
+
+class Certification(models.Model):
+    cer_name = models.CharField(max_length=50)
+    cer_org = models.CharField(max_length=50)
+    cer_details = models.CharField(max_length=200)
+    cer_img = models.ImageField(upload_to='certifications')
+
+    def __str__(self):
+        return self.cer_name
     

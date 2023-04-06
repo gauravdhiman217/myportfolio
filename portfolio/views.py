@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect
-from portfolio.models import Projects , Contact
+from portfolio.models import Projects , Certification
 from .forms import ContactForm
 from django.contrib import messages
 # Create your views here.
@@ -17,6 +17,7 @@ def index(request):
             messages.error(request,contactus_form.errors)
     contactus_form = ContactForm()
     forms = Projects.objects.all()
-    return render(request,'index.html',{'forms':forms,'contactus_form':contactus_form})
+    certification = Certification.objects.all()
+    return render(request,'index.html',{'forms':forms,'certifications':certification,'contactus_form':contactus_form})
     
 
