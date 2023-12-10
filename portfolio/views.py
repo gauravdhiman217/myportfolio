@@ -3,7 +3,6 @@ from django.http import HttpResponseRedirect
 from portfolio.models import Projects , Certification
 from .forms import ContactForm
 from django.contrib import messages
-# Create your views here.
 
 def index(request):
     if request.method =='POST':
